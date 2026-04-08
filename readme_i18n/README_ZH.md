@@ -176,7 +176,7 @@ LocalSend 使用安全通信协议，允许设备之间通过 REST API 进行通
 ### Bug 修复和改进
 
 - **Bug 修复：** 如果发现 bug，请创建一个带有清晰描述问题及解决方法的拉取请求。
-- **改进：** 有改进 LocalSend 的想法吗？请先创建一个问题来讨论为什么需要这个改进。
+- **改进：** 有改进 LocalSend 的想法吗？请先创建一个 Issue 来讨论为何需要这个改进。
 
 欲了解更多信息，请参阅[贡献指南](https://github.com/localsend/localsend/blob/main/CONTRIBUTING.md)。
 
@@ -189,6 +189,74 @@ LocalSend 使用安全通信协议，允许设备之间通过 REST API 进行通
 | 设备不可见 | macOS, iOS     | 任何            | 尝试在系统设置中的“隐私”下切换“本地网络”权限。                               |
 | 速度太慢   | 任何           | 任何            | 使用 5 Ghz 频段；关闭发送和接收端设备的数据加密。                            |
 | 速度太慢   | 任何           | 安卓            | 已知的问题。见 https://github.com/flutter-cavalry/saf_stream/issues/4       |
+
+## 构建
+
+这些命令仅供维护者使用。 请确保在 `app` 目录中执行。
+
+### Android
+
+传统 APK
+
+```bash
+flutter build apk
+```
+
+Google Play 专用的 AppBundle
+
+```bash
+flutter build appbundle
+```
+
+### iOS
+
+```bash
+flutter build ipa
+```
+
+### macOS
+
+```bash
+flutter build macos
+```
+
+### Windows
+
+**传统格式**
+
+```bash
+flutter build windows
+```
+
+**本地 MSIX 应用**
+
+```bash
+flutter pub run msix:create
+```
+
+**商店就绪版本 (Store ready)**
+
+```bash
+flutter pub run msix:create --store
+```
+
+### Linux
+
+**传统格式**
+
+```bash
+flutter build linux
+```
+
+**AppImage**
+
+```bash
+appimage-builder --recipe AppImageBuilder.yml
+```
+
+**Snap**
+
+相关说明请参考： [localsend/snap/README.md](https://github.com/localsend/snap/blob/main/README.md)
 
 ## 贡献者
 
